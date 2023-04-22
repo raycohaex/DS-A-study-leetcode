@@ -26,6 +26,15 @@ class LinkedList:
             self.tail = new_node # update the tail to be the new node
         self.length += 1
 
+    def prepend(self, value):
+        new_node = Node(value)
+        if self.head is None:
+            self.head = new_node
+            self.tail = self.head
+        new_node.next = self.head
+        self.head = new_node
+        self.length += 1
+
     def pop(self):
         if self.length == 0:
             return None
@@ -52,5 +61,11 @@ linked_list.append(10)
 linked_list.append(15)
 linked_list.append(20)
 linked_list.append(13)
+
+linked_list.print_list()
+
+print('---')
+
+linked_list.prepend(1)
 
 linked_list.print_list()
