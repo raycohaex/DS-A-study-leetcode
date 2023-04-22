@@ -26,6 +26,26 @@ class LinkedList:
             self.tail = new_node # update the tail to be the new node
         self.length += 1
 
+    def pop(self):
+        if self.length == 0:
+            return None
+        temp = self.head
+        pre = self.head
+        # traverse the linkedlist, make sure temp always moves 1 up front
+        while(temp.next): 
+            pre = temp
+            temp = temp.next
+        # set new tail, which is second last, unset previous tail.
+        self.tail = pre
+        self.tail.next = None
+        self.length -= 1
+        # if the linkedlist is now empty, there's no head or tail
+        if self.length == 0:
+            self.head = None
+            self.tail = None
+        
+
+
 
 linked_list = LinkedList(5)
 linked_list.append(10)
