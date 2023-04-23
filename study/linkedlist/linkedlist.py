@@ -94,6 +94,8 @@ class LinkedList:
         self.length += 1
         return True
         
+    # get the node before the one to remove, point that to the node_to_remove.next
+    # set node_to_remove to None
     def remove(self, index):
         if index < 0 or index >= self.length:
             return None
@@ -108,6 +110,9 @@ class LinkedList:
         self.length -= 1
         return temp
 
+    # switch head and tail after making a "copy" of head
+    # loop through length of the LL
+    # point them the other way around
     def reverse(self):
         temp = self.head
         self.head = self.tail
