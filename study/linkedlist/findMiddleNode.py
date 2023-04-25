@@ -1,29 +1,28 @@
 # exericse
 from LinkedList import *
+from typing import Optional
 
-# linked_list = LinkedList(5)
-# linked_list.append(10)
-# linked_list.append(15)
-# linked_list.append(20)
-# linked_list.append(13)
+class Solution:
+    # 2 pointer approach, fast pointer moves 2 steps at a time, slow pointer moves 1 step at a time
+    # when fast pointer reaches the end, slow pointer will be at the middle
+    def find_middle_node(self, head: Optional[Node]) -> Optional[Node]:
+        fast = head
+        slow = head
+        while fast and fast.next:
+            fast = fast.next.next
+            slow = slow.next
+        return slow
 
-# linked_list.print_list()
+linked_list = LinkedList(1)
+linked_list.append(2)
+linked_list.append(3)
+linked_list.append(4)
+linked_list.append(5)
+linked_list.append(6)
+linked_list.append(7)
+linked_list.append(8)
+linked_list.append(9)
 
-# print('---')
+solution = Solution()
 
-# linked_list.set_value(1, 99)
-# linked_list.insert(2, 105)
-# linked_list.pop_first()
-
-# linked_list.print_list()
-
-# print('---')
-
-# linked_list.remove(1)
-
-# linked_list.print_list()
-
-# print('---')
-
-# linked_list.reverse()
-# linked_list.print_list()
+print(middle_node.value)
