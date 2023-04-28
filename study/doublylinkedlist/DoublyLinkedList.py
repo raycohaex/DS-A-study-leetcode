@@ -82,6 +82,13 @@ class DoublyLinkedList:
             for _ in range(self.length - 1, index, -1):
                 temp = temp.prev   
         return temp
+
+    def set_value(self, index, value):
+        temp = self.get(index)
+        if temp == None:
+            return False
+        temp.value = value
+        return True
     
 
 dll = DoublyLinkedList(1)
@@ -95,6 +102,8 @@ dll.prepend(0)
 dll.pop_first()
 
 print('get', dll.get(0).value)
+dll.set_value(0, 99)
+print('get after set', dll.get(0).value)
 
 
 dll.print_list()
