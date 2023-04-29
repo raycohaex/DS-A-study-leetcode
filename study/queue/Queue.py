@@ -22,7 +22,7 @@ class Queue:
             self.first = new_node
             self.last = new_node
         else:
-            self.first.next = new_node
+            self.last.next = new_node
             self.last = new_node
         self.length += 1
 
@@ -44,4 +44,5 @@ queue = Queue(4)
 queue.enqueue(3)
 queue.enqueue(2)
 queue.enqueue(1)
+queue.dequeue()
 queue.print_queue()
