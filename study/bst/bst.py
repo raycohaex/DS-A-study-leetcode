@@ -1,8 +1,8 @@
 class Node:
     def __init__(self, value):
         self.value = value
-        self.next = None
-        self.prev = None
+        self.left = None
+        self.right = None
         
 class BinarySearchTree:
     def __init__(self):
@@ -39,4 +39,4 @@ print(tree.root.value)
 print(tree.root.left.value)
 print(tree.root.right.value)
 print(tree.root.left.left.value)
-print(tree.root.left.right.value)
+print(tree.root.right.left.value)
